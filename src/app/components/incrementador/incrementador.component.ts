@@ -20,7 +20,7 @@ export class IncrementadorComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Leyenda', this.leyenda);
+    // console.log('Leyenda', this.leyenda);
   }
 
   onChanges(newValue: number): void {
