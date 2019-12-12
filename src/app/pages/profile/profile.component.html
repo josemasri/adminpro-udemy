@@ -29,13 +29,13 @@
     <div class="col-lg-5">
         <div class="card">
             <div class="card-body" align="center">
-                <h4 class="card-title">Fotografía del usuario</h4>
-                <h6 class="card-subtitle">nombre usuario</h6>
+                <h4 class="card-title">Imagen del usuario</h4>
+                <h6 class="card-subtitle">{{ usuario.nombre }}</h6>
 
                 <img *ngIf="!imagenTemp" [src]="usuario.img | imagen" alt="" class="w-150">
                 <img *ngIf="imagenTemp" [src]="imagenTemp" alt="" class="w-150">
 
-                <input (change)="seleccionImage($event.target.files[0])" type="file" name="" id="">
+                <input (change)="seleccionImage($event.target.files[0])" type="file" class="form-control-file" id="">
                 <br>
                 <br>
                 <button (click)="cambiarImagen()" [disabled]="!imagenSubir" type="submit" class="btn btn-success btn-block waves-effect waves-light m-r-10"> <i class="fa fa-save"></i> Actualizar foto</button>

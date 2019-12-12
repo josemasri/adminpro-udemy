@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { UsuarioService } from '../../services/service.index';
 
+declare var swal: any;
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -12,7 +14,7 @@ export class ProfileComponent implements OnInit {
   usuario: Usuario;
 
   imagenSubir: File;
-  imagenTemp: ArrayBuffer;
+  imagenTemp: string | ArrayBuffer;
 
   constructor(
     public _usuarioService: UsuarioService
@@ -47,8 +49,8 @@ export class ProfileComponent implements OnInit {
 
     this.imagenSubir = archivo;
 
-    let reader = new FileReader();
-    let urlImagenTemp = reader.readAsDataURL(archivo);
+    const reader = new FileReader();
+    const urlImagenTemp = reader.readAsDataURL(archivo);
 
     reader.onloadend = () => this.imagenTemp = reader.result;
 
