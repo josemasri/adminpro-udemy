@@ -70,8 +70,6 @@ export class LoginComponent implements OnInit {
 
   ingresar(forma: NgForm) {
     // this.router.navigate(['/dashboard']);
-    console.log(forma.valid);
-    console.log(forma.value);
     if (forma.invalid) {
       swal('Error', 'Revisa los campos', 'warning');
       return;
@@ -82,14 +80,6 @@ export class LoginComponent implements OnInit {
     this._usuarioService.login(usuario, forma.value.recuerdame)
       .subscribe(() => this.router.navigate(['/dashboard']));
 
-  }
-
-  onSignIn(googleUser) {
-    const profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   }
 
 }
