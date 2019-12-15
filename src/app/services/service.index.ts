@@ -1,3 +1,4 @@
+export { AdminGuard } from './guards/admin.guard';
 export { ModalUploadService } from '../components/modal-upload/modal-upload.service';
 export { SubirArchivoService } from './subir-archivo/subir-archivo.service';
 export { SettingsService } from './settings/settings.service';
